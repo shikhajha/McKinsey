@@ -86,7 +86,7 @@ public class IntegerOccurenceCounterMain {
             if (str.isEmpty()) {
                 continue;
             }
-            intArray[index] = Integer.valueOf(intStrs[index]);
+            intArray[index] = Integer.valueOf(str);
         }
         return intArray;
 
