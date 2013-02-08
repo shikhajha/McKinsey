@@ -82,7 +82,7 @@ public class IntegerOccurenceCounterMain {
         String[] intStrs = input.split(DEMILITER);
         int[] intArray = new int[intStrs.length];
         for (int index = 0; index < intStrs.length; index++) {
-            String str = intStrs[index];
+            String str = intStrs[index].trim();
             if (str.isEmpty()) {
                 continue;
             }
