@@ -19,9 +19,8 @@ public class TweetsMain extends JPanel {
 	 * 
 	 */
 	
-	public static final int MAX_RESULTS = 50*2;
+	public static final int MAX_RESULTS = 100;
 	private static final long serialVersionUID = 1L;
-	private TweetFetcher tweetFethcer = null;
 	private TweetTableModel model;
 	private JTable table = null;
 
@@ -44,7 +43,7 @@ public class TweetsMain extends JPanel {
 
 						@Override
 						public void run() {
-							model.setTweets(tweetFethcer.getTweets(searchKey , MAX_RESULTS));
+							model.setTweets(TweetFetcher.getTweets(searchKey , MAX_RESULTS));
 							table.repaint();
 							TweetsMain.this.repaint();
 							
@@ -59,7 +58,6 @@ public class TweetsMain extends JPanel {
 		
 		add(labels,BorderLayout.NORTH);
 
-		tweetFethcer = new TweetFetcher();
 		// Create and set up the window.
 		JFrame frame = new JFrame("Get Tweets");
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);

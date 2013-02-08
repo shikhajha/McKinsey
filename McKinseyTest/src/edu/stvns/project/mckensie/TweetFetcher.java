@@ -10,10 +10,17 @@ import java.util.List;
 import org.json.JSONArray;
 import org.json.JSONObject;
 
+/*
+ * This class provides APIs to download tweets
+ * It uses Twitter Json search API and JSON library to parse the downloaded data into Tweet
+ */
 public class TweetFetcher {
-	private final String urlstr = "http://search.twitter.com/search.json?q=";
+	public static final String urlstr = "http://search.twitter.com/search.json?q=";
 
-	public List<Tweet> getTweets(String searchKey, int maxResults) {
+	/*
+	 * Download most recent tweets for the searchKey and limits the results to maxResults
+	 */
+	public static List<Tweet> getTweets(String searchKey, int maxResults) {
 
 		URL url = null;
 		String searchUrl = null;
